@@ -2,7 +2,7 @@ from mazegenerator import MazeGenerator
 
 
 def test_maze():
-    generator = MazeGenerator((50, 50))
+    generator = MazeGenerator()
     print(generator.maze)
 
 class Maze:
