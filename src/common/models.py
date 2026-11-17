@@ -6,8 +6,6 @@ class Position:
 class GhostState:
     pass
 
-class GameStatus:
-    pass
 
 @dataclass
 class GameState:
@@ -18,4 +16,3 @@ class GameState:
     lives: int
     level: int
     remaining_time: float
-    status: GameStatus
