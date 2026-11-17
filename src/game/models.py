@@ -1,13 +1,10 @@
 from dataclasses import dataclass
 
-class Position:
-    pass
+from .ghost import GhostState
+from .player import Position
 
-class GhostState:
-    pass
 
-class GameStatus:
-    pass
+# this inits after program run
 
 @dataclass
 class GameState:
@@ -18,4 +15,3 @@ class GameState:
     lives: int
     level: int
     remaining_time: float
-    status: GameStatus

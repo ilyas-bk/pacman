@@ -1,19 +1,20 @@
 from mazegenerator import MazeGenerator
+from tui_display import MazeRenderer
 
-
-def test_maze():
-    generator = MazeGenerator()
-    print(generator.maze)
 
 class Maze:
-    # maze data -> maze display
+    "Dinamic maze, tracks player, ghost and pac-gum stats"
 
-    def __init__(self):
-        pass
+    def __init__(self, maze: list[list[int]]):
+        self.maze = maze
+
 
 
 if __name__ == "__main__":
+    def test_maze():
+        generator = MazeGenerator()
+        maze = generator.maze
+        renderer = MazeRenderer(maze)
+        renderer.display_maze(renderer.maze, False, False, [])
+
     test_maze()
-
-
-

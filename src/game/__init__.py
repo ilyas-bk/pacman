@@ -1,1 +1,1 @@
-from .status import GameState
+from .game import Game
