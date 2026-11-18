@@ -1,10 +1,18 @@
 from dataclasses import dataclass
 
-class Position:
-    pass
+try:
+    from src.game import GhostState
+except ImportError:
+    class GhostState:
+        pass
 
-class GhostState:
-    pass
+try:
+    from src.game import Position
+except ImportError:
+    class Position:
+        pass
+
+
 
 
 @dataclass
