@@ -1,18 +1,36 @@
 from typing import Any
+from src import GameState
 
-from .models import GameState
+from .ghost import GhostController
 
+
+# this is what the game module should expose
 class Game:
-    "Game class for the game logic (player movement, maze status, ghosts...)"
+    "the main Game class for the game logic (player movement, maze status, ghosts...)"
+    def __init__(self, game_state: GameState):
+        self.game_state = game_state
+        self.ghost_controller = GhostController(self.game_state)
+
+
+    def start(self):
+        while True:
+            for ghost in self.game_state.ghosts:
+                if ghost.x == self.game_state.player.x and ghost.y == self.game_state.player.y:
+                    print("PLAYER EATEN BY GHOST!!!")
+                    return
+            self.ghost_controller.follow_player()
+
 
     def update(self) -> None:
-        "update the maze status"
+        "update the whole game status, (time, ghosts, postion)"
         pass
+
 
     def get_status(self) -> "GameState":
-        "returns the state of the game"
+        "returns the current state of the game"
         pass
 
-    def move_player(self, Direction: Any) -> None:
+
+    def move_player(self, direction: Any) -> None:
         "move the player to the indicated direction"
         pass

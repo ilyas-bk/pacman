@@ -1,19 +1,35 @@
+from src.common.models import Movement
+from src.common.models import Position
 
-class Position:
 
-    def __init__(self, start: list[int, int]):
-        self.x = start[0]
-        self.y = start[1]
+class Player:
+    def __init__(self, position: Position):
+        self.position = position
 
-    # move methods should check for boundries.. or only when I call them?
+
+    def move(self, input: Movement):
+        match input:
+            case Movement.UP:
+                pass
+            case Movement.RIGHT:
+                pass
+            case Movement.DOWN:
+                pass
+            case Movement.LEFT:
+                pass
+
+
     def move_right(self):
-        self.x += 1
+        self.position.x += 1
+
 
     def move_left(self):
-        self.x -= 1
+        self.position.x -= 1
+
 
     def move_up(self):
-        self.y += 1
+        self.position.y += 1
+
 
     def move_down(self):
-        self.y -= 1
+        self.position.y -= 1
