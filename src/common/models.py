@@ -1,23 +1,36 @@
 from dataclasses import dataclass
+from enum import Enum
 
 try:
-    from src.game import GhostState
+    from src.game.maze import Maze
 except ImportError:
-    class GhostState:
-        pass
-
-try:
-    from src.game import Position
-except ImportError:
-    class Position:
+    class Maze:
         pass
 
 
+class Movement(Enum):
+    UP = 0
+    RIGHT = 1
+    DOWN = 2
+    LEFT = 3
+
+
+@dataclass
+class Position:
+    x: int
+    y: int
+
+
+@dataclass
+class GhostState:
+    x: int
+    y: int
+    scared: bool
 
 
 @dataclass
 class GameState:
-    maze: list[list[int]]
+    maze: Maze
     player: Position
     ghosts: list[GhostState]
     score: int
