@@ -7,7 +7,6 @@ Run this file directly to print the checked settings without starting a game.
 
 import json
 import logging
-import sys
 from pathlib import Path
 
 
@@ -180,7 +179,8 @@ def load_config(path: Path) -> dict:
 
 #     if len(sys.argv) != 2:
 #         print(
-#             "Usage: python3 " + str(Path(__file__).resolve()) + " CONFIG_FILE",
+#             "Usage: python3 " + str(Path(__file__).resolve()) + "\
+#  CONFIG_FILE",
 #             file=sys.stderr,
 #         )
 #         return 2
