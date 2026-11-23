@@ -1,0 +1,22 @@
+# Practice input for example_parser.py.
+# These are whole-line comments, supported by the project parser.
+# lives is missing on purpose: the parser should use 3.
+{
+    "level": [
+        {
+            "width": 17,
+            "height": 15
+        },
+        {
+            "width": "wide",
+            "height": 19
+        }
+    ],
+    "seed": 123,
+    "level_max_time": 120,
+    "points_per_pacgum": 10,
+    "points_per_super_pacgum": 50,
+    "points_per_ghost": -5,
+    "highscore_filename": "scores#1.json",
+    "extra_setting": "The parser should ignore this unknown key."
+}
