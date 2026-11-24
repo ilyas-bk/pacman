@@ -18,7 +18,7 @@ def draw_maze(screen, maze, cell_size, margin=0):
             has_left_wall = bool(cell & 8)
 
             # Draw top wall if it exists
-            if has_top_wall == True:
+            if has_top_wall:
                 pygame.draw.line(
                     screen,
                     (255, 255, 255),
@@ -28,7 +28,7 @@ def draw_maze(screen, maze, cell_size, margin=0):
                 )
 
             # Draw right wall if it exists
-            if has_right_wall == True:
+            if has_right_wall:
                 pygame.draw.line(
                     screen,
                     (255, 255, 255),
@@ -38,7 +38,7 @@ def draw_maze(screen, maze, cell_size, margin=0):
                 )
 
             # Draw bottom wall if it exists
-            if has_bottom_wall == True:
+            if has_bottom_wall:
                 pygame.draw.line(
                     screen,
                     (255, 255, 255),
@@ -48,7 +48,7 @@ def draw_maze(screen, maze, cell_size, margin=0):
                 )
 
             # Draw left wall if it exists
-            if has_left_wall == True:
+            if has_left_wall:
                 pygame.draw.line(
                     screen,
                     (255, 255, 255),

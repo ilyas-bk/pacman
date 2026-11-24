@@ -50,6 +50,11 @@ def des_main():
                 if event.key == pygame.K_n:
                     if current_level < len(mazes) - 1:
                         current_level = current_level + 1
+                elif event.key == pygame.K_p and current_level > 0:
+                    current_level = current_level - 1
+                # Quit the game
+                elif event.key == pygame.K_q:
+                    running = False
 
     pygame.quit()
 
