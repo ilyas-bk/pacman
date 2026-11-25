@@ -1,4 +1,5 @@
 from enum import Enum
+from ..common.models import Position
 
 
 class Direction(Enum):
@@ -16,17 +17,17 @@ class Maze:
         self.grid = grid
 
 
-    def has_wall(self, x: int, y: int, direction: Direction) -> bool:
+    def has_wall(self, position: Position, direction: Direction) -> bool:
         "checks if the cell has a wall in a direction"
-        cell = self.grid[x][y]
+        cell = self.grid[position.y][position.x]
         return bool(cell & direction.value)
 
-    def can_move(self, x: int, y: int, direction: Direction) -> bool:
+    def can_move(self, position: Position, direction: Direction) -> bool:
         "checks movement availability for ghosts and player"
-        return not self.has_wall(x, y, direction)
+        return not self.has_wall(position, direction)
 
-    def is_block(self, x: int, y: int) -> bool:
-        return self.grid[x][y] == 15
+    def is_block(self, position: Position) -> bool:
+        return self.grid[position.y][position.x] == 15
 
 
 if __name__ == "__main__":
@@ -47,11 +48,11 @@ if __name__ == "__main__":
             [12,  4,  5,  4,  5,  5,  6, 12,  6, 12,  4,  4,  5,  4,  6]]
 
     maze = Maze(grid)
-    cell = [1, 13]
-    print("cell:", grid[cell[0]][cell[1]])
-    print("north:", maze.has_wall(*cell, Direction.NORTH))
-    print("east:", maze.has_wall(*cell, Direction.EAST))
-    print("south:", maze.has_wall(*cell, Direction.SOUTH))
-    print("west:", maze.has_wall(*cell, Direction.WEST))
+    cell = Position(13, 1)
+    print("cell:", grid[cell.x][cell.y])
+    print("north:", maze.has_wall(cell, Direction.NORTH))
+    print("east:", maze.has_wall(cell, Direction.EAST))
+    print("south:", maze.has_wall(cell, Direction.SOUTH))
+    print("west:", maze.has_wall(cell, Direction.WEST))
 
 

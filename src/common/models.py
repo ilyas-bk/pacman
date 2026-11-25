@@ -3,7 +3,7 @@ from enum import Enum
 
 try:
     from src.game.maze import Maze
-except ImportError:
+except Exception:
     class Maze:
         pass
 
@@ -30,7 +30,7 @@ class GhostState:
 
 @dataclass
 class GameState:
-    maze: Maze
+    maze: list[list[int]]
     player: Position
     ghosts: list[GhostState]
     score: int

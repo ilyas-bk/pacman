@@ -1,8 +1,7 @@
-from src.common.models import GhostState
-from src import GameState
+from ..common.models import GhostState
+from .. import GameState
 import time
 
-# I can modify this to change the ghosts behaviour
 class GhostController:
 
     def __init__(self, game_state: GameState):

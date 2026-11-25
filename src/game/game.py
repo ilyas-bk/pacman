@@ -1,16 +1,11 @@
 from typing import Any
-from src import GameState
-
-from .ghost import GhostController
+from .. import GameState
 
 
-# this is what the game module should expose
 class Game:
     "the main Game class for the game logic (player movement, maze status, ghosts...)"
     def __init__(self, game_state: GameState):
         self.game_state = game_state
-        self.ghost_controller = GhostController(self.game_state)
-
 
     def start(self):
         while True:
