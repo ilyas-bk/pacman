@@ -33,8 +33,6 @@ class MazeGrid:
     """
 
     cells: list[list[int]]
-    entry: Position
-    exit: Position
 
     def __post_init__(self) -> None:
         """Reject empty, uneven, or invalid maze data."""
@@ -51,10 +49,6 @@ class MazeGrid:
                 if not 0 <= cell <= 15:
                     raise ValueError("Every maze cell must be from 0 to 15.")
 
-        if not self.inside(self.entry) or not self.inside(self.exit):
-            raise ValueError(
-                "The maze entry and exit must be inside the maze."
-            )
 
     @property
     def width(self) -> int:
@@ -172,8 +166,6 @@ def generate_maze(width: int, height: int, seed: int = 0) -> MazeGrid:
         cells = [list(row) for row in generator.maze]
         return MazeGrid(
             cells=cells,
-            entry=generator.maze_entry,
-            exit=generator.maze_exit,
         )
     except Exception as error:
         raise MazeGenerationError(
